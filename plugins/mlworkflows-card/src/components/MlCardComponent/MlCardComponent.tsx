@@ -6,7 +6,18 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import MaterialButton from '@material-ui/core/Button';
 import Typography from '@mui/material/Typography';
-import { createTheme } from '@mui/material/styles';
+import { ThemeProvider, createTheme } from '@mui/material';
+
+import { Icon } from "@material-ui/core";
+import { Link } from '@backstage/plugin-ilert';
+import MaterialTable from 'material-table';
+import { Avatar } from '@mui/material';
+
+export const Logo = () => (
+    <Icon>
+        <img src={YourLogo} height={25} width={25}/>
+    </Icon>
+)
 
 const mlCardTheme = createTheme({
   components: {
@@ -38,6 +49,8 @@ const mlCardTheme = createTheme({
 const doConnect = () => {
     return 'Your click worked!';
 };
+
+const defaultMaterialTheme = createTheme();
 
 export const MlCardComponent = (props) => {
   return (
