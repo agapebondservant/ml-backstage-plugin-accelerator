@@ -1,7 +1,7 @@
 accelerator:
   displayName: ML Backstage Accelerator
   description: ML Workflows plugin for TAP
-  iconUrl: https://www.google.com/url?sa=i&url=https%3A%2F%2Ftanzu.vmware.com%2Fdeveloper%2Ftanzu%2F&psig=AOvVaw05q-rgrSl1J0-PJPnbsWCT&ust=1694690496251000&source=images&cd=vfe&opi=89978449&ved=0CA8QjRxqFwoTCMCY8Ju8p4EDFQAAAAAdAAAAABAD
+  iconUrl: "https://www.google.com/imgres?imgurl=https%3A%2F%2Fbackstage.io%2Flogo_assets%2Fsvg%2FIcon_Black.svg&tbnid=8yuh1kX36cz_xM&vet=12ahUKEwiG8vLxw6eBAxV_ju4BHbmjAcgQMygEegQIARBg..i&imgrefurl=https%3A%2F%2Fbackstage.io%2Fdocs%2Foverview%2Flogos%2F&docid=ysv397VSOPaxmM&w=630&h=800&q=backstage%20icon&ved=2ahUKEwiG8vLxw6eBAxV_ju4BHbmjAcgQMygEegQIARBg"
   tags:
   - "ML"
   - "AI"
