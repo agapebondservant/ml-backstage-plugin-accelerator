@@ -28,6 +28,7 @@ export const ExampleComponent = () => (
             image="./static/images/mlflow.png"
             console="http://mlflow.tanzudatatap.com"
             connector="http://jupyter-jupyterhub.tanzudatatap.com"
+            description="Dev Instance"
             body="MLflow an open source platform for managing the end-to-end machine learning lifecycle, with components for tracking, serving, packaging and registering models."
           />
          </Grid>
@@ -41,6 +42,7 @@ export const ExampleComponent = () => (
               image="./static/images/mlflow.png"
               console="http://mlflow.tanzudatatap.com"
               connector="http://jupyter-jupyterhub.tanzudatatap.com"
+              description="Dev Instance"
               body="MLflow an open source platform for managing the end-to-end machine learning lifecycle, with components for tracking, serving, packaging and registering models."
             />
            </Grid>
@@ -49,6 +51,7 @@ export const ExampleComponent = () => (
               image="./static/images/kubeflow.png"
               console="http://mlflow.tanzumlai.com"
               connector="http://jupyter-jupyterhub.tanzudatatap.com"
+              description="Dev Instance"
               body="Kubeflow is an open-source platform for machine learning and MLOps on Kubernetes, handling model development, model training, model serving, and automated machine learning."
             />
           </Grid>
@@ -73,6 +76,7 @@ export const ExampleComponent = () => (
               image="./static/images/evidently.jpeg"
               console="http://mlflow.tanzudatatap.com"
               connector="http://jupyter-jupyterhub.tanzudatatap.com"
+              description="Dev Instance"
               body="Evidently is an open-source Python library for data scientists and ML engineers. It helps evaluate, test, and monitor data and ML models from validation to production. It works with tabular, text data and embeddings."
             />
            </Grid>

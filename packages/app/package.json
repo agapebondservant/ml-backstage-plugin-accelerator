@@ -48,6 +48,7 @@
     "@internal/plugin-mlworkflows-card": "^0.1.0",
     "@internal/plugin-mlworkflows-clusters": "^0.1.0",
     "@internal/plugin-mlworkflows-data": "^0.1.0",
+    "@internal/plugin-mlworkflows-dialog": "^0.1.0",
     "@internal/plugin-mlworkflows-experiments": "^0.1.0",
     "@internal/plugin-mlworkflows-models": "^0.1.0",
     "@internal/plugin-mlworkflows-pipelines": "^0.1.0",

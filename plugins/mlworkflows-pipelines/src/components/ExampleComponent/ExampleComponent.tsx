@@ -28,6 +28,7 @@ export const ExampleComponent = () => (
             image="./static/images/argoworkflows.png"
             console="https://argo-workflows.tanzudatatap.com/"
             connector="http://jupyter-jupyterhub.tanzudatatap.com"
+            description="Dev Environment"
             body="Argo Workflows is an open source container-native workflow engine for orchestrating parallel jobs on Kubernetes, where each step in the workflow is a container."
           />
       </Grid>
@@ -42,6 +43,7 @@ export const ExampleComponent = () => (
           image="./static/images/kubeflowpipelines.png"
           console="http://kubeflow-pipelines.tanzudatatap.com"
           connector="http://jupyter-jupyterhub.tanzudatatap.com"
+          description="Dev Instance"
           body="Kubeflow Pipelines enables the development of reusable end-to-end ML workflows built using the Kubeflow Pipelines SDK for end-to-end ML orchestration."
         />
       </Grid>
@@ -55,6 +57,7 @@ export const ExampleComponent = () => (
               image="./static/images/springclouddataflow.png"
               console="http://scdf.tanzudatatap.com/dashboard"
               connector="http://jupyter-jupyterhub.tanzudatatap.com"
+               description="Pre-prod Instance"
               body="Spring Cloud Data Flow is a cloud-native engine for both batch and real-time data pieplines, with support for ETL processing, event streaming and predictive analytics."
             />
            </Grid>

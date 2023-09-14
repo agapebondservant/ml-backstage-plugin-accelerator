@@ -26,6 +26,7 @@ export const ExampleComponent = () => (
           <MlCardComponent
             image="./static/images/jupyterhub.png"
             connector="http://jupyter-jupyterhub.tanzudatatap.com"
+            description="Main Portal"
             body="Jupyterhub is a multi-user Hub that spawns, manages, and proxies multiple instances of the single-user Jupyter notebook server."
           />
          </Grid>

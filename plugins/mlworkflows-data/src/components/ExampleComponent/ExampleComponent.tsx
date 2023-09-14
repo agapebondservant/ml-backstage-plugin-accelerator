@@ -28,6 +28,7 @@ export const ExampleComponent = () => (
             image="./static/images/greenplum.jpeg"
             console="http://ec2-44-201-91-88.compute-1.amazonaws.com:28080"
             connector="http://jupyter-jupyterhub.tanzudatatap.com"
+            description="AWS Marketplace Training Instance"
             body="Greenplum is the world's only opensource-based, multi-cloud, massively parallel processing (MPP) data platform for large-scale analytics and data warehousing."
           />
          </Grid>
@@ -57,6 +58,9 @@ export const ExampleComponent = () => (
            <Grid item>
             <MlCardComponent
                 image="./static/images/gemfire.jpeg"
+                connector="http://jupyter-jupyterhub.tanzudatatap.com"
+                console="http://gfanomaly-locator.tanzudatatap.com/pulse"
+                description="Fraud Detection Feature Store (Dev)"
                 body="Gemfire is a data management platform that provides real-time, consistent access to data-intensive applications throughout widely distributed cloud architectures."
               />
           </Grid>
@@ -70,6 +74,7 @@ export const ExampleComponent = () => (
               image="./static/images/greenplum.jpeg"
               console="http://ec2-44-201-91-88.compute-1.amazonaws.com:28080"
               connector="http://jupyter-jupyterhub.tanzudatatap.com"
+              description="AWS Marketplace Training Instance"
               body="Greenplum is a parallelized Postgres database with support for semantic-based search algorithms and vectorized embeddings using pgvector and postgresml."
             />
            </Grid>

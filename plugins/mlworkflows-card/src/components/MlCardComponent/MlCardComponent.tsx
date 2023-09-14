@@ -7,17 +7,16 @@ import Button from '@mui/material/Button';
 import MaterialButton from '@material-ui/core/Button';
 import Typography from '@mui/material/Typography';
 import { ThemeProvider, createTheme } from '@mui/material';
-
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import IconButton from '@material-ui/core/IconButton';
 import { Icon } from "@material-ui/core";
 import { Link } from '@backstage/plugin-ilert';
-import MaterialTable from 'material-table';
 import { Avatar } from '@mui/material';
-
-export const Logo = () => (
-    <Icon>
-        <img src={YourLogo} height={25} width={25}/>
-    </Icon>
-)
+import CloseIcon from '@material-ui/icons/Close';
+import { MlDialogComponent } from '@internal/plugin-mlworkflows-dialog';
 
 const mlCardTheme = createTheme({
   components: {
@@ -43,6 +42,13 @@ const mlCardTheme = createTheme({
         },
       },
     },
+    MuiIconButton: {
+      styleOverrides: {
+        label: {
+          float: 'right',
+        },
+      },
+    },
   },
 });
 
@@ -53,6 +59,16 @@ const doConnect = () => {
 const defaultMaterialTheme = createTheme();
 
 export const MlCardComponent = (props) => {
+  const [open, setOpen] = React.useState(false);
+
+  const openDialog = () => {
+      setOpen(true);
+  }
+
+  const closeDialog = () => {
+      setOpen(false);
+  }
+
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -69,7 +85,18 @@ export const MlCardComponent = (props) => {
       <CardActions
         theme= { mlCardTheme }>
         <MaterialButton href={props.connector} target="_blank" rel="noopener">Connect</MaterialButton>
-        <MaterialButton href={props.console} target="_blank" rel="noopener">Console</MaterialButton>
+        <MaterialButton onClick={openDialog}>Console</MaterialButton>
+        <Dialog
+            open={open}
+            onClose={closeDialog}
+            aria-labelledBy="dialog-instances"
+            aria-describedBy="List of instances"
+            maxWidth="xl"
+            scroll="body"
+        >
+            <DialogTitle>Instances <IconButton style={{ float: 'right' }} aria-label="close" onClick={closeDialog}><CloseIcon/></IconButton></DialogTitle>
+            <DialogContent><MlDialogComponent connector={props.console} description={props.description}/><br/></DialogContent>
+        </Dialog>
       </CardActions>
     </Card>
   );

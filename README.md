@@ -25,7 +25,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 npm install --global yarn
-yarn add @mui/icons-material @mui/material @emotion/styled @emotion/react material-table@1.36.0 @material-ui/icons @mui/styles @mui/lab -W;
+yarn add @mui/icons-material @mui/material @emotion/styled @emotion/react material-table@1.36.0 @material-ui/icons @mui/styles @mui/lab axios -W;
 ```
 
 ## NOTE: Steps 2-9 are only required if a Backstage app has not already been generated.
@@ -77,7 +77,7 @@ export PLUGIN_NAME=<name of plugin>
 export COMPONENT_NAME=<name of component>
 echo "$PLUGIN_NAME" | yarn new --select plugin
 rm -rf plugins/$PLUGIN_NAME/src/components/ExampleFetchComponent
-mv -r plugins/$PLUGIN_NAME/src/components/ExampleComponent plugins/<name of component>/src/components/$COMPONENT_NAME
+mv plugins/$PLUGIN_NAME/src/components/ExampleComponent plugins/<name of component>/src/components/$PLUGIN_NAME
 ```
 
 * Add the code below to the plugin.ts file (replace COMPONENT_NAME and PLUGIN_NAME with the values configured above,
