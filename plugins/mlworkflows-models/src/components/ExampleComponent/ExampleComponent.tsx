@@ -58,6 +58,20 @@ export const ExampleComponent = () => (
         </Grid>
         <br/><br/>
 
+      <ContentHeader title="Model Hubs" variant="h3"/>
+        <Grid container spacing={3}>
+            <Grid item>
+              <MlCardComponent
+                image="./static/images/huggingface.png"
+                console="https://huggingface.co/tanzuhuggingface"
+                connector="http://jupyter-jupyterhub.tanzudatatap.com"
+                description="TanzuHuggingFace Space"
+                body="HuggingFace Hub s a central repository where people can share and access machine learning models, datasets, demos, applications and more for easier collaboration."
+              />
+             </Grid>
+          </Grid>
+          <br/><br/>
+
       <ContentHeader title="AutoML" variant="h3"/>
           <Grid container spacing={3}>
               <Grid item>
