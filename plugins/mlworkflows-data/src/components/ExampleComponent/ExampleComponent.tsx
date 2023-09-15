@@ -104,15 +104,6 @@ export const ExampleComponent = () => (
                      body="Gemfire is a data management platform that provides real-time, consistent access to data-intensive applications throughout widely distributed cloud architectures."
                    />
                </Grid>
-               <Grid item>
-                 <MlCardComponent
-                   image="./static/images/spark.png"
-                   connector="http://jupyter-jupyterhub.tanzudatatap.com"
-                   console="http://kubeflow-pipelines.tanzudatatap.com/#/pipelines"
-                   description="Spark Dev Env"
-                   body="Spark is an open-source unified analytics engine for large-scale data processing, including an interface for programming clusters with data parallelism and fault tolerance."
-                 />
-                </Grid>
                 <Grid item>
                  <MlCardComponent
                    image="./static/images/redis.png"
