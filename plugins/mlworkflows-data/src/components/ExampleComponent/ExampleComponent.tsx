@@ -91,6 +91,39 @@ export const ExampleComponent = () => (
               />
           </Grid>
          </Grid>
+         <br/><br/>
+
+         <ContentHeader title="In-Memory Datastores" variant="h3"/>
+         <Grid container spacing={3}>
+             <Grid item>
+                 <MlCardComponent
+                     image="./static/images/gemfire.jpeg"
+                     connector="http://jupyter-jupyterhub.tanzudatatap.com"
+                     console="http://gfanomaly-locator.tanzudatatap.com/pulse"
+                     description="LLM Cache (Dev)"
+                     body="Gemfire is a data management platform that provides real-time, consistent access to data-intensive applications throughout widely distributed cloud architectures."
+                   />
+               </Grid>
+               <Grid item>
+                 <MlCardComponent
+                   image="./static/images/spark.png"
+                   connector="http://jupyter-jupyterhub.tanzudatatap.com"
+                   console="http://kubeflow-pipelines.tanzudatatap.com/#/pipelines"
+                   description="Spark Dev Env"
+                   body="Spark is an open-source unified analytics engine for large-scale data processing, including an interface for programming clusters with data parallelism and fault tolerance."
+                 />
+                </Grid>
+                <Grid item>
+                 <MlCardComponent
+                   image="./static/images/redis.png"
+                   connector="http://jupyter-jupyterhub.tanzudatatap.com"
+                   console="http://kubeflow-pipelines.tanzudatatap.com/#/pipelines"
+                   description="Redis Dev Env"
+                   body="Redis is an open source (BSD licensed), in-memory data structure store, used as a distributed, in-memory key–value database, cache and message broker."
+                 />
+                </Grid>
+             </Grid>
+             <br/><br/>
     </Content>
   </Page>
 );
