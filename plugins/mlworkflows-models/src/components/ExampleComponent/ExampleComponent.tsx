@@ -49,7 +49,7 @@ export const ExampleComponent = () => (
            <Grid item>
             <MlCardComponent
               image="./static/images/kubeflow.png"
-              console="http://mlflow.tanzumlai.com"
+              console="http://kubeflow-pipelines.tanzudatatap.com/#/pipelines"
               connector="http://jupyter-jupyterhub.tanzudatatap.com"
               description="Dev Instance"
               body="Kubeflow is an open-source platform for machine learning and MLOps on Kubernetes, handling model development, model training, model serving, and automated machine learning."
