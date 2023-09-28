@@ -40,7 +40,7 @@ export const ExampleComponent = () => (
           <MlCardComponent
             image="./static/images/ray.png"
             connector="http://jupyter-jupyterhub.tanzudatatap.com"
-            console="http://jupyter-jupyterhub.tanzudatatap.com"
+            console="http://ray.tanzudataworkshop.info/#/cluster"
             description="Ray Development Env"
             body="Ray is an open-source unified compute framework for scaling AI and Python workloads, including reinforcement learning, deep learning to tuning and model serving."
           />
