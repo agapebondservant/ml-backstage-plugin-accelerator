@@ -93,6 +93,20 @@ export const ExampleComponent = () => (
          </Grid>
          <br/><br/>
 
+         <ContentHeader title="Data Catalogs" variant="h3"/>
+          <Grid container spacing={3}>
+              <Grid item>
+                  <MlCardComponent
+                      image="./static/images/datahub.png"
+                      connector="http://jupyter-jupyterhub.tanzudatatap.com"
+                      console="https://demo.datahubproject.io/"
+                      description="Main Data Catalog"
+                      body="DataHub is an extensible metadata platform that enables data discovery, data observability and federated governance for taming the complexity of enterprise data."
+                    />
+                </Grid>
+              </Grid>
+              <br/><br/>
+
          <ContentHeader title="In-Memory Datastores" variant="h3"/>
          <Grid container spacing={3}>
              <Grid item>
