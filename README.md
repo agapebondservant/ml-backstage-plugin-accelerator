@@ -103,3 +103,24 @@ Run:
 ```
 yarn dev
 ```
+# Deploy the Backstage plugin as a TAP workload
+
+* Deploy the workload:
+```
+tanzu apps workload create ml-backstage-plugin-app -f config/workload.yaml --yes
+```
+
+* Tail the logs of the main app:
+```
+tanzu apps workload tail ml-backstage-plugin-app --since 64h
+```
+
+* Once deployment succeeds, get the URL for the main app:
+```
+tanzu apps workload get ml-backstage-plugin-app     #should yield image-processor.default.<your-domain>
+```
+
+* To delete the app:
+```
+tanzu apps workload delete ml-backstage-plugin-app --yes
+```
