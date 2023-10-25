@@ -1,3 +1,13 @@
 config/
 .env
 data
+resources
+dist-types
+examples
+node_modules
+packages
+plugins
+*.yaml
+*.json
+*.lock
+*log
