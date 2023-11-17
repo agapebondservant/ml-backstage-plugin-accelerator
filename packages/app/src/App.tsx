@@ -54,6 +54,7 @@ import LightIcon from '@material-ui/icons/WbSunny';
 import DarkIcon from '@material-ui/icons/Brightness2';
 import { MlworkflowsCardPage } from '@internal/plugin-mlworkflows-card';
 import { MlworkflowsDialogPage } from '@internal/plugin-mlworkflows-dialog';
+import { MlworkflowsBasePage } from '@internal/plugin-mlworkflows-base';
 
 const demoTheme = createTheme({
   palette: darkTheme.palette,
@@ -145,6 +146,7 @@ const routes = (
     <Route path="/mlworkflows-experiments" element={<MlworkflowsExperimentsPage />} />
     <Route path="/mlworkflows-card" element={<MlworkflowsCardPage />} />
     <Route path="/mlworkflows-dialog" element={<MlworkflowsDialogPage />} />
+    <Route path="/mlworkflows-base" element={<MlworkflowsBasePage />} />
   </FlatRoutes>
 );
 

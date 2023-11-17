@@ -25,7 +25,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 npm install --global yarn
-yarn add @mui/icons-material @mui/material @emotion/styled @emotion/react material-table@1.36.0 @material-ui/icons @mui/styles @mui/lab axios -W;
+yarn add @mui/icons-material @mui/material @emotion/styled @emotion/react material-table@1.36.0 @material-ui/icons @mui/styles @mui/lab axios js-yaml -W;
 ```
 
 ## NOTE: Steps 2-9 are only required if a Backstage app has not already been generated.
@@ -50,26 +50,28 @@ echo "ALTER USER postgres WITH PASSWORD '$BACKSTAGE_PG_PASSWORD'" | PGPASSWORD=p
 yarn add --cwd packages/backend pg
 ```
 
-5. Install the GitHub App integration (one-time op; skip if already performed):
+5. Install the GitHub App integration and follow the instructions as prompted (one-time op; skip if already performed):
 ```
 yarn backstage-cli create-github-app $BACKSTAGE_GITHUB_ORG
 ```
 
-6. Update configuration for the new backend package and GitHub App integration:
+6. Update **app-config.yaml** as directed by the instructions in the prior GitHub App integration step. 
+
+7. Update configuration for the new backend package and GitHub App integration:
 ```
 cp resources/*.yaml .
 ```
 
-7. Start the Backstage app:
+8. Start the Backstage app:
 ```
 yarn dev
 ```
 
-8. To create a new plugin:
+9. To create a new plugin:
 ```
 echo "<name of plugin>" | yarn new --select plugin
 ```
-9. To create a new component extension,
+10. To create a new component extension,
 
 * Create the new component extension template:
 ```
@@ -97,6 +99,14 @@ export const COMPONENT_NAME = PLUGIN_NAME_CAMELCASE.provide(
 ```
 export { COMPONENT_NAME } from './plugin';
 ```
+
+11. Create a new backend plugin:
+```
+export BACKEND_PLUGIN_NAME=<name of plugin>
+echo "$BACKEND_PLUGIN_NAME" | yarn new --select backend-plugin
+yarn add --cwd packages/backend @internal/plugin-${BACKEND_PLUGIN_NAME}-backend@^0.1.0
+```
+12. 
 
 # Run the Backstage plugin locally
 Run:

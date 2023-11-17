@@ -45,6 +45,7 @@
     "@backstage/plugin-user-settings": "^0.7.6",
     "@backstage/theme": "^0.4.1",
     "@internal/plugin-mlworkflows": "^0.1.0",
+    "@internal/plugin-mlworkflows-base": "^0.1.0",
     "@internal/plugin-mlworkflows-card": "^0.1.0",
     "@internal/plugin-mlworkflows-clusters": "^0.1.0",
     "@internal/plugin-mlworkflows-data": "^0.1.0",
