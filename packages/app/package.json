@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "@oawofolu/app",
   "version": "0.0.0",
   "private": true,
   "bundled": true,
@@ -89,5 +89,9 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "main": ".eslintrc.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@internal/plugin-mlworkflows",
+  "name": "@oawofolu/plugin-mlworkflows",
   "version": "0.1.0",
   "main": "src/index.ts",
   "types": "src/index.ts",
@@ -47,5 +47,15 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "description": "Welcome to the mlworkflows plugin!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agapebondservant/ml-backstage-plugin-accelerator.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/agapebondservant/ml-backstage-plugin-accelerator/issues"
+  },
+  "homepage": "https://github.com/agapebondservant/ml-backstage-plugin-accelerator#readme"
 }

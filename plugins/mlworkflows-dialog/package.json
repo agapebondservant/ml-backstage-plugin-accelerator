@@ -1,10 +1,10 @@
 {
-  "name": "@internal/plugin-mlworkflows-dialog",
+  "name": "@oawofolu/plugin-mlworkflows-dialog",
   "version": "0.1.0",
   "main": "src/index.ts",
+  "private": true,
   "types": "src/index.ts",
   "license": "Apache-2.0",
-  "private": true,
   "publishConfig": {
     "access": "public",
     "main": "dist/index.esm.js",
@@ -47,5 +47,7 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "description": "Welcome to the mlworkflows-dialog plugin!",
+  "author": ""
 }
