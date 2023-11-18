@@ -25,7 +25,8 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 npm install --global yarn
-yarn add @mui/icons-material @mui/material @emotion/styled @emotion/react material-table@1.36.0 @material-ui/icons @mui/styles @mui/lab axios js-yaml -W;
+yarn add @mui/icons-material @mui/material @emotion/styled @emotion/react material-table@1.36.0 @backstage/plugin-kubernetes \
+@material-ui/icons @mui/styles @mui/lab axios js-yaml -W;
 ```
 
 ## NOTE: Steps 2-9 are only required if a Backstage app has not already been generated.
