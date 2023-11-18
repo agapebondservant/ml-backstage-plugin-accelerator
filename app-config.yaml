@@ -1,5 +1,5 @@
 app:
-  title: Scaffolded Backstage App
+  title: ML Backstage App
   baseUrl: http://localhost:3000
 
 organization:
@@ -103,7 +103,10 @@ kubernetes:
     - type: 'config'
       clusters:
         - name: local
+          url: ${BACKSTAGE_KUBEURL}
+          serviceAccountToken: tap-gui
           authProvider: 'serviceAccount'
+          caData: ${BACKSTAGE_CONFIG_CA_DATA}
           skipTLSVerify: false
           skipMetricsLookup: true
 

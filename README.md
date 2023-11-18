@@ -27,6 +27,8 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 npm install --global yarn
 yarn add @mui/icons-material @mui/material @emotion/styled @emotion/react material-table@1.36.0 @backstage/plugin-kubernetes \
 @material-ui/icons @mui/styles @mui/lab axios js-yaml -W;
+yarn add --cwd packages/app @backstage/plugin-kubernetes;
+yarn add --cwd packages/backend @backstage/plugin-kubernetes-backend @backstage/plugin-catalog-backend-module-github;
 ```
 
 ## NOTE: Steps 2-9 are only required if a Backstage app has not already been generated.
@@ -63,7 +65,12 @@ yarn backstage-cli create-github-app $BACKSTAGE_GITHUB_ORG
 cp resources/*.yaml .
 ```
 
-8. Start the Backstage app:
+8. (For running locally): Start the Kubernetes API proxy:
+```
+kubectl proxy
+```
+
+9. Start the Backstage app:
 ```
 yarn dev
 ```
