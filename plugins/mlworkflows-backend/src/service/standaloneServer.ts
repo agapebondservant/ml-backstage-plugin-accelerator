@@ -2,6 +2,7 @@ import { createServiceBuilder } from '@backstage/backend-common';
 import { Server } from 'http';
 import { Logger } from 'winston';
 import { createRouter } from './router';
+import { UrlReaders, loadBackendConfig } from '@backstage/backend-common';
 
 export interface ServerOptions {
   port: number;
@@ -13,9 +14,14 @@ export async function startStandaloneServer(
   options: ServerOptions,
 ): Promise<Server> {
   const logger = options.logger.child({ service: 'mlworkflows-backend' });
+  const config = await loadBackendConfig({
+      argv: process.argv,
+      logger: logger,
+    });
   logger.debug('Starting application server...');
   const router = await createRouter({
     logger,
+    reader: UrlReaders.default({logger: logger, config})
   });
 
   let service = createServiceBuilder(module)

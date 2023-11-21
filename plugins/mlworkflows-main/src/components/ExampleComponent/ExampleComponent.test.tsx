@@ -22,6 +22,6 @@ describe('ExampleComponent', () => {
 
   it('should render', async () => {
     await renderInTestApp(<ExampleComponent />);
-    expect(screen.getByText('Welcome to mlworkflows!')).toBeInTheDocument();
+    expect(screen.getByText('Welcome to mlworkflows-main!')).toBeInTheDocument();
   });
 });

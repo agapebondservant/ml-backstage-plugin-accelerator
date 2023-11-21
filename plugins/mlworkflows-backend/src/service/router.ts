@@ -4,7 +4,7 @@ import Router from 'express-promise-router';
 import { Logger } from 'winston';
 
 export interface RouterOptions {
-  logger: Logger, reader: UrlReader, files;
+  logger: Logger, reader: UrlReader;
 }
 
 export async function createRouter(

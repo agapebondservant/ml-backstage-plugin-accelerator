@@ -2,16 +2,16 @@ import { createPlugin, createRoutableExtension } from '@backstage/core-plugin-ap
 
 import { rootRouteRef } from './routes';
 
-export const mlworkflowsPlugin = createPlugin({
-  id: 'mlworkflows',
+export const mlworkflowsMainPlugin = createPlugin({
+  id: 'mlworkflows-main',
   routes: {
     root: rootRouteRef,
   },
 });
 
-export const MlworkflowsPage = mlworkflowsPlugin.provide(
+export const MlworkflowsMainPage = mlworkflowsMainPlugin.provide(
   createRoutableExtension({
-    name: 'MlworkflowsPage',
+    name: 'MlworkflowsMainPage',
     component: () =>
       import('./components/ExampleComponent').then(m => m.ExampleComponent),
     mountPoint: rootRouteRef,

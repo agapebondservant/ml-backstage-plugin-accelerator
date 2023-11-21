@@ -22,20 +22,11 @@ import {
   SidebarScrollWrapper,
   SidebarSpace,
   useSidebarOpenState,
-  Link,
-  GroupIcon,
-  SidebarSubmenu,
-  SidebarSubmenuItem,
+  Link
 } from '@backstage/core-components';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
-import PsychologyIcon from '@mui/icons-material/Psychology';
-import AutoGraphIcon from '@mui/icons-material/AutoGraph';
-import StorageIcon from '@mui/icons-material/Storage';
-import AccountTreeIcon from '@mui/icons-material/AccountTree';
-import GroupWorkIcon from '@mui/icons-material/GroupWork';
-import HourglassBottomIcon from '@mui/icons-material/HourglassBottom';
-import { useApp } from '@backstage/core-plugin-api';
+import PublicIcon from '@material-ui/icons/Public';
 
 const useSidebarLogoStyles = makeStyles({
   root: {
@@ -80,35 +71,7 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
         <SidebarItem icon={ExtensionIcon} to="api-docs" text="APIs" />
         <SidebarItem icon={LibraryBooks} to="docs" text="Docs" />
         <SidebarItem icon={CreateComponentIcon} to="create" text="Create..." />
-        <SidebarItem icon={PsychologyIcon} to="mlworkflows" text="ML Workflows" >
-            <SidebarSubmenu title="Components">
-                <SidebarSubmenuItem
-                  title="Data"
-                  to="mlworkflows-data"
-                  icon={useApp().getSystemIcon('storage')}
-                />
-                <SidebarSubmenuItem
-                  title="Models"
-                  to="mlworkflows-models"
-                  icon={useApp().getSystemIcon('autograph')}
-                />
-                <SidebarSubmenuItem
-                  title="Pipelines"
-                  to="mlworkflows-pipelines"
-                  icon={useApp().getSystemIcon('accounttree')}
-                />
-                <SidebarSubmenuItem
-                  title="Clusters"
-                  to="mlworkflows-clusters"
-                  icon={useApp().getSystemIcon('groupwork')}
-                />
-                <SidebarSubmenuItem
-                  title="Experiments"
-                  to="mlworkflows-experiments"
-                  icon={useApp().getSystemIcon('hourglass')}
-                />
-              </SidebarSubmenu>
-        </SidebarItem>;
+        <SidebarItem icon={PublicIcon} to="mlworkflows-main" text="ML Workflows" />
         {/* End global nav */}
         <SidebarDivider />
         <SidebarScrollWrapper>

@@ -1,4 +1,4 @@
-import { React } from 'react';
+import React from 'react';
 import { MlBaseComponent } from '@internal/plugin-mlworkflows-base';
 
 export const ExampleComponent = () => {

@@ -1,20 +1,16 @@
+// @ts-nocheck
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import MaterialButton from '@material-ui/core/Button';
 import Typography from '@mui/material/Typography';
-import { ThemeProvider, createTheme } from '@mui/material';
+import { createTheme } from '@mui/material';
 import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import IconButton from '@material-ui/core/IconButton';
-import { Icon } from "@material-ui/core";
-import { Link } from '@backstage/plugin-ilert';
-import { Avatar } from '@mui/material';
 import CloseIcon from '@material-ui/icons/Close';
 import { MlDialogComponent } from '@internal/plugin-mlworkflows-dialog';
 
@@ -42,23 +38,10 @@ const mlCardTheme = createTheme({
         },
       },
     },
-    MuiIconButton: {
-      styleOverrides: {
-        label: {
-          float: 'right',
-        },
-      },
-    },
   },
 });
 
-const doConnect = () => {
-    return 'Your click worked!';
-};
-
-const defaultMaterialTheme = createTheme();
-
-export const MlCardComponent = (props) => {
+export const MlCardComponent = (props: any) => {
   const [open, setOpen] = React.useState(false);
 
   const openDialog = () => {
