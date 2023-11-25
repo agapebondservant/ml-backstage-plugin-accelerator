@@ -1,4 +1,4 @@
-import { createRouter } from '@internal/plugin-mlworkflows-backend';
+import { createRouter } from '@oawofolu/plugin-mlworkflows-backend';
 import { Router } from 'express';
 import { PluginEnvironment } from '../types';
 

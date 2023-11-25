@@ -34,19 +34,10 @@ import { CatalogGraphPage } from '@backstage/plugin-catalog-graph';
 import { RequirePermission } from '@backstage/plugin-permission-react';
 import { catalogEntityCreatePermission } from '@backstage/plugin-catalog-common/alpha';
 
-import { MlworkflowsDataPage } from '@internal/plugin-mlworkflows-data';
-import { MlworkflowsModelsPage } from '@internal/plugin-mlworkflows-models';
-import { MlworkflowsPipelinesPage } from '@internal/plugin-mlworkflows-pipelines';
-import { MlworkflowsClustersPage } from '@internal/plugin-mlworkflows-clusters';
-import { MlworkflowsExperimentsPage } from '@internal/plugin-mlworkflows-experiments';
-
 import { createTheme, darkTheme } from '@backstage/theme';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { MlworkflowsCardPage } from '@internal/plugin-mlworkflows-card';
-import { MlworkflowsDialogPage } from '@internal/plugin-mlworkflows-dialog';
-import { MlworkflowsBasePage } from '@internal/plugin-mlworkflows-base';
-import { MlworkflowsMainPage } from '@internal/plugin-mlworkflows-main';
+import { MlworkflowsMainPage } from '@oawofolu/plugin-mlworkflows-main';
 
 const demoTheme = createTheme({
   palette: darkTheme.palette,
@@ -122,15 +113,6 @@ const routes = (
     </Route>
     <Route path="/settings" element={<UserSettingsPage />} />
     <Route path="/catalog-graph" element={<CatalogGraphPage />} />
-    <Route path="/mlworkflows-data" element={<MlworkflowsDataPage />} />
-    <Route path="/mlworkflows-main" element={<MlworkflowsMainPage />} />
-    <Route path="/mlworkflows-models" element={<MlworkflowsModelsPage />} />
-    <Route path="/mlworkflows-pipelines" element={<MlworkflowsPipelinesPage />} />
-    <Route path="/mlworkflows-clusters" element={<MlworkflowsClustersPage />} />
-    <Route path="/mlworkflows-experiments" element={<MlworkflowsExperimentsPage />} />
-    <Route path="/mlworkflows-card" element={<MlworkflowsCardPage />} />
-    <Route path="/mlworkflows-dialog" element={<MlworkflowsDialogPage />} />
-    <Route path="/mlworkflows-base" element={<MlworkflowsBasePage />} />
     <Route path="/mlworkflows-main" element={<MlworkflowsMainPage />} />
   </FlatRoutes>
 );

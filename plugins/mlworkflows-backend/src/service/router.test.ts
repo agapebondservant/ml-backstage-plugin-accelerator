@@ -1,7 +1,6 @@
-import { getVoidLogger } from '@backstage/backend-common';
+import { getVoidLogger, UrlReaders, loadBackendConfig } from '@backstage/backend-common';
 import express from 'express';
 import request from 'supertest';
-import { UrlReaders, loadBackendConfig } from '@backstage/backend-common';
 import { createRouter } from './router';
 
 describe('createRouter', () => {

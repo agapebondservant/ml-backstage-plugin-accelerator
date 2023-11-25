@@ -1,8 +1,7 @@
-import { createServiceBuilder } from '@backstage/backend-common';
+import { createServiceBuilder, UrlReaders, loadBackendConfig } from '@backstage/backend-common';
 import { Server } from 'http';
 import { Logger } from 'winston';
 import { createRouter } from './router';
-import { UrlReaders, loadBackendConfig } from '@backstage/backend-common';
 
 export interface ServerOptions {
   port: number;

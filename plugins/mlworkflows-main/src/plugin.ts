@@ -13,7 +13,7 @@ export const MlworkflowsMainPage = mlworkflowsMainPlugin.provide(
   createRoutableExtension({
     name: 'MlworkflowsMainPage',
     component: () =>
-      import('./components/ExampleComponent').then(m => m.ExampleComponent),
+      import('./components/MlMainComponent').then(m => m.MlMainComponent),
     mountPoint: rootRouteRef,
   }),
 );

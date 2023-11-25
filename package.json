@@ -1,7 +1,8 @@
 {
   "name": "@oawofolu/ml-backstage",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "type": "module",
+  "private": true,
   "engines": {
     "node": "16 || 18"
   },
@@ -69,6 +70,11 @@
   "directories": {
     "example": "examples"
   },
-  "author": "",
-  "license": "ISC"
+  "files": [
+    "dist",
+    "migrations/**/*.{js,d.ts}"
+  ],
+  "author": "Tola Awofolu <oawofolu@pivotal.io>",
+  "license": "ISC",
+  "repository": "git@github.com:agapebondservant/ml-backstage-plugin-accelerator.git"
 }
