@@ -147,7 +147,7 @@ tools:
     title: "AutoML"
     category: "models"
     image: "./static/images/katib.png"
-    body=: "Katib is a Kubernetes-native project for automated machine learning (AutoML), supporting Hyperparameter Tuning, Early Stopping and Neural Architecture Search."
+    body: "Katib is a Kubernetes-native project for automated machine learning (AutoML), supporting Hyperparameter Tuning, Early Stopping and Neural Architecture Search."
   - name: "evidently"
     title: "ML Monitoring"
     category: "models"
