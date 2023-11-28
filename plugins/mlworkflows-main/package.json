@@ -1,6 +1,6 @@
 {
   "name": "@oawofolu/plugin-mlworkflows-main",
-  "version": "0.4.1",
+  "version": "0.4.4",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "license": "Apache-2.0",
@@ -15,12 +15,13 @@
   "sideEffects": false,
   "scripts": {
     "start": "backstage-cli package start",
-    "build": "backstage-cli package build",
+    "build": "GENERATE_SOURCEMAP=false backstage-cli package build",
     "lint": "backstage-cli package lint",
     "test": "backstage-cli package test",
     "clean": "backstage-cli package clean",
     "prepack": "backstage-cli package prepack",
-    "postpack": "backstage-cli package postpack"
+    "postpack": "backstage-cli package postpack",
+    "postbuild": "cp -r src/components/MlCardComponent/static/ dist/static"
   },
   "dependencies": {
     "@backstage/core-components": "^0.13.4",
@@ -45,7 +46,8 @@
     "msw": "^1.0.0"
   },
   "files": [
-    "dist"
+    "dist",
+    "static"
   ],
   "description": "Welcome to the mlworkflows-main plugin!",
   "author": ""
