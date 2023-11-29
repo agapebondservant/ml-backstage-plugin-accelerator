@@ -17,7 +17,6 @@ import { useApi, configApiRef } from '@backstage/core-plugin-api';
 import { kubernetesApiRef } from '@backstage/plugin-kubernetes';
 import useAsync from 'react-use/lib/useAsync';
 import * as yaml from 'js-yaml';
-import { Progress, WarningPanel } from '@backstage/core-components';
 
 const mlCardTheme = createTheme({
   components: {
@@ -25,6 +24,7 @@ const mlCardTheme = createTheme({
       styleOverrides: {
         root: {
           backgroundSize: '200px',
+          objectFit: "scaleDown",
         },
       },
     },
@@ -87,50 +87,47 @@ export const MlCardComponent = (props: any) => {
 
   if (error) {
     console.log(error);
-    return <><Progress /><WarningPanel title={"Page loading (could take up to a minute). Please wait..."}/></>;
   }
-  else {
-      return (
-        <Card sx={{ maxWidth: 345 }}>
-          <CardMedia
-            sx={{ height: 140 }}
-            image={ require('' + props.image + '') }
-            theme={ mlCardTheme }
-          />
-          <CardContent
-            theme= { mlCardTheme }>
-            <Typography variant="body2">
-              { props.body }
-            </Typography>
-          </CardContent>
-          <CardActions
-            theme= { mlCardTheme }>
-            <MaterialButton onClick={openDialog}>Connect</MaterialButton>
-            <Dialog
-                open={open}
-                onClose={closeDialog}
-                aria-labelledby="dialog-instances"
-                aria-describedby="List of instances"
-                maxWidth="xl"
-                scroll="body"
-            >
-                <DialogTitle>Instances <IconButton style={{ float: 'right' }} aria-label="close" onClick={closeDialog}><CloseIcon/></IconButton></DialogTitle>
-                <DialogContent>
-                    <MlDialogComponent
-                            category={props.name}
-                            items={mlServiceBindings?.items}/>
-                            <br/>
-                </DialogContent>
-            </Dialog>
-            { mlConsoleLinks.items?.map((item: any) =>
-                <><MaterialButton
-                    href={ `${item.data?.link}` }
-                    target="_blank"
-                    rel="noopener">Console
-                </MaterialButton></>
-             )}
-          </CardActions>
-        </Card>
-      );
-    }
+  return (
+    <Card sx={{ maxWidth: 345 }}>
+      <CardMedia
+        sx={{ height: 140 }}
+        image={ "/images/" + props.image }
+        theme={ mlCardTheme }
+      />
+      <CardContent
+        theme= { mlCardTheme }>
+        <Typography variant="body2">
+          { props.body }
+        </Typography>
+      </CardContent>
+      <CardActions
+        theme= { mlCardTheme }>
+        <MaterialButton onClick={openDialog}>Connect</MaterialButton>
+        <Dialog
+            open={open}
+            onClose={closeDialog}
+            aria-labelledby="dialog-instances"
+            aria-describedby="List of instances"
+            maxWidth="xl"
+            scroll="body"
+        >
+            <DialogTitle>Instances <IconButton style={{ float: 'right' }} aria-label="close" onClick={closeDialog}><CloseIcon/></IconButton></DialogTitle>
+            <DialogContent>
+                <MlDialogComponent
+                        category={props.name}
+                        items={mlServiceBindings?.items}/>
+                        <br/>
+            </DialogContent>
+        </Dialog>
+        { mlConsoleLinks.items?.map((item: any) =>
+            <><MaterialButton
+                href={ `${item.data?.link}` }
+                target="_blank"
+                rel="noopener">Console
+            </MaterialButton></>
+         )}
+      </CardActions>
+    </Card>
+  );
 }

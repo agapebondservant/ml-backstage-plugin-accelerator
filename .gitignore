@@ -54,3 +54,4 @@ site
 .env
 github-app-backstage-tanzu-credentials.yaml
 github-app-backstage-tanzuml-credentials.yaml
+packages/app/public/
