@@ -61,10 +61,11 @@ export const MlCardComponent = (props: any) => {
 
   const [mlConsoleLinks, setConsoleLinks] = React.useState([]);
 
+  const CLUSTER_NAME = "local"; // useApi(configApiRef).getOptionalString('mlbackstage.clusterName');
+
   /*** * Fetch Kubernetes metadata * ***/
   const kubernetesApi = useApi(kubernetesApiRef);
   var { value, loading, error } = useAsync(async (): Promise<any> => {
-       const CLUSTER_NAME = 'local';
 
        await Promise.all([
           kubernetesApi.proxy({

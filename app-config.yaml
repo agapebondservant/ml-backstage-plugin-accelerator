@@ -1,3 +1,6 @@
+mlbackstage:
+  clusterName: local
+
 app:
   title: ML Backstage App
   baseUrl: http://localhost:3000

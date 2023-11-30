@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React, { useState } from 'react';
-import { Grid } from '@material-ui/core';
-import { Header, Page, Content, ContentHeader, Progress, WarningPanel } from '@backstage/core-components';
+import { Grid, Typography } from '@material-ui/core';
+import { Header, Page, Content, Progress, WarningPanel } from '@backstage/core-components';
 import { MlCardComponent } from '../MlCardComponent';
 import { useApi, configApiRef } from '@backstage/core-plugin-api';
 import useAsync from 'react-use/lib/useAsync';
@@ -29,14 +29,14 @@ export const MlBaseComponent = (props: any) => {
    else if (mlFilesPayload) {
      return  (
               <Page themeId="tool">
-                <Header title=""
+                <Header title={props.title}
                         subtitle={props.subtitle}
                         style={{background: 'none'}}>
                 </Header>
                 <Content>
                    {[...new Set(mlFilesPayload.tools.filter((mlFile: any) => mlFile.category === props.category).map(mlFile => mlFile.title))].map((mlFileTitle: string, i: any) =>
                    <>
-                      <ContentHeader title={mlFileTitle} variant="h3" key={props.category + "mlfiletitlecontent" + i}/>
+                      <Typography variant="h6">{mlFileTitle}</Typography>
                       <Grid container spacing={3} key={props.category + "mlfiletitlegrid" + i}>
                         {mlFilesPayload.tools.filter( (mlFile: any) => mlFile.title === mlFileTitle).map((mlFile: any, j: any) =>
                             <Grid item key={props.category + "mlfilegrid" + j}>
