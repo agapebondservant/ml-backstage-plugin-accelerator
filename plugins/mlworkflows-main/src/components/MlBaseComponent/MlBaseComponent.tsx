@@ -28,7 +28,7 @@ export const MlBaseComponent = (props: any) => {
    }
    else if (mlFilesPayload) {
      return  (
-              <Page themeId="tool">
+                <>
                 <Header title={props.title}
                         subtitle={props.subtitle}
                         style={{background: 'none'}}>
@@ -46,6 +46,7 @@ export const MlBaseComponent = (props: any) => {
                                 image={ mlFile.image }
                                 category= { mlFile.category }
                                 body={ mlFile.body }
+                                color={ mlFile.color }
                               />
                              </Grid>
                          )}
@@ -54,7 +55,7 @@ export const MlBaseComponent = (props: any) => {
                   </>
                   )}
                 </Content>
-              </Page>
+                </>
         );
      } else {
         return <><Progress /><WarningPanel title="Page loading. Please wait..."/></>;

@@ -92,10 +92,12 @@ export const MlCardComponent = (props: any) => {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
-        sx={{ height: 140 }}
-        image={ "/images/" + props.image }
-        theme={ mlCardTheme }
-      />
+        sx={{ height: 140, backgroundImage: 'radial-gradient(white,lightgray)', backgroundSize: '100%' }}
+        theme={ mlCardTheme } >
+      <Typography style={{color: `${props.color || 'darkgreen'}`,textTransform: 'capitalize',padding: '1em',textAlign: 'center',letterSpacing: '.2rem',font: '3em "Calibri", sans-serif'}}>
+        { props.name }
+      </Typography>
+      </CardMedia>
       <CardContent
         theme= { mlCardTheme }>
         <Typography variant="body2">
