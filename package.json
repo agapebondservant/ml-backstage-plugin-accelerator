@@ -63,7 +63,8 @@
     "@mui/styles": "^5.14.9",
     "axios": "^1.5.0",
     "js-yaml": "^4.1.0",
-    "material-table": "1.36.0"
+    "material-table": "1.36.0",
+    "node-cache": "^5.1.2"
   },
   "description": "Custom ML/AI unified GUI/panel built with Backstage.",
   "main": ".eslintrc.js",

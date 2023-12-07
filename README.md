@@ -26,7 +26,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 npm install --global yarn
 yarn add @mui/icons-material @mui/material @emotion/styled @emotion/react material-table@1.36.0 @backstage/plugin-kubernetes \
-@material-ui/icons @mui/styles @mui/lab axios js-yaml -W;
+@material-ui/icons @mui/styles @mui/lab axios js-yaml node-cache -W;
 yarn add --cwd packages/app @backstage/plugin-kubernetes;
 yarn add --cwd packages/backend @backstage/plugin-kubernetes-backend @backstage/plugin-catalog-backend-module-github;
 ```
