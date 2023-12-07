@@ -4,9 +4,8 @@ import { Grid, Typography } from '@material-ui/core';
 import { Header, Page, Content, Progress, WarningPanel } from '@backstage/core-components';
 import { MlCardComponent } from '../MlCardComponent';
 import { useApi, configApiRef } from '@backstage/core-plugin-api';
+import { catalogApiRef } from '@backstage/plugin-catalog-react';
 import useAsync from 'react-use/lib/useAsync';
-import * as yaml from 'js-yaml';
-import mlTools from './yaml/mlTools.yaml';
 
 export const MlBaseComponent = (props: any) => {
 
@@ -16,9 +15,12 @@ export const MlBaseComponent = (props: any) => {
 
    const [mlFilesPayloadError, setFilesPayloadError] = useState("");
 
+   const catalogApi = useApi( catalogApiRef );
+
    var { value, loading, error } = useAsync(async (): Promise<any[]> => {
-        console.debug(mlTools);
-        setFilesPayload(mlTools);
+        const payload = await catalogApi.getEntityByRef({ kind: "Component", name: "mltools-metadata"});
+        console.debug(payload);
+        setFilesPayload(payload?.spec);
         return [];
      }, []);
 

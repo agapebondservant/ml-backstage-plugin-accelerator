@@ -9,5 +9,6 @@ export default async function createPlugin(
   return await createRouter({
     logger: env.logger,
     reader: env.reader,
+    config: env.config
   });
 }

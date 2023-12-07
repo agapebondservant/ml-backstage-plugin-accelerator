@@ -49,6 +49,8 @@ const mlCardTheme = createTheme({
 export const MlCardComponent = (props: any) => {
   const [open, setOpen] = React.useState(false);
 
+  const configApi = useApi(configApiRef);
+
   const openDialog = () => {
        setOpen(true);
   }
@@ -61,7 +63,9 @@ export const MlCardComponent = (props: any) => {
 
   const [mlConsoleLinks, setConsoleLinks] = React.useState([]);
 
-  const CLUSTER_NAME = "local"; // useApi(configApiRef).getOptionalString('mlbackstage.clusterName');
+  const CLUSTER_NAME = configApi.getOptionalString('mlbackstage.clusterName');
+
+  const BACKEND_BASE_URL = configApi.getOptionalString('backend.baseUrl');
 
   /*** * Fetch Kubernetes metadata * ***/
   const kubernetesApi = useApi(kubernetesApiRef);
@@ -92,12 +96,10 @@ export const MlCardComponent = (props: any) => {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
-        sx={{ height: 140, backgroundImage: 'radial-gradient(white,lightgray)', backgroundSize: '100%' }}
-        theme={ mlCardTheme } >
-      <Typography style={{color: `${props.color || 'darkgreen'}`,textTransform: 'capitalize',padding: '1em',textAlign: 'center',letterSpacing: '.2rem',font: '3em "Calibri", sans-serif'}}>
-        { props.name }
-      </Typography>
-      </CardMedia>
+        sx={{ height: 140 }}
+        image={ `${BACKEND_BASE_URL}/api/mlworkflows/images/` + props.image }
+        theme={ mlCardTheme }
+      />
       <CardContent
         theme= { mlCardTheme }>
         <Typography variant="body2">

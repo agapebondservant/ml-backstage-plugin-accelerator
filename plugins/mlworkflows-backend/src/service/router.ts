@@ -2,15 +2,16 @@ import { errorHandler, UrlReader } from '@backstage/backend-common';
 import express from 'express';
 import Router from 'express-promise-router';
 import { Logger } from 'winston';
+import { Config } from '@backstage/config';
 
 export interface RouterOptions {
-  logger: Logger, reader: UrlReader;
+  logger: Logger, reader: UrlReader, config: Config
 }
 
 export async function createRouter(
   options: RouterOptions,
 ): Promise<express.Router> {
-  const { logger, reader } = options;
+  const { logger, reader, config } = options;
 
   const router = Router();
   router.use(express.json());
@@ -20,17 +21,15 @@ export async function createRouter(
     response.json({ status: 'ok' });
   });
 
-  router.get('/files', async (_, response) => {
-    const responseFileList = await reader.search(
-      'https://github.com/tanzumldemos/backstage-ml-panel/blob/main/*.yaml',
+  router.get('/images/:image', async (request, response) => {
+    const imageName = request.params.image;
+    const imageBaseUrl = config.getString('mlbackstage.imageRepoBaseUrl');
+    const file = await reader.readUrl (
+        `${imageBaseUrl}/${imageName}`
     );
-    const responseFiles = await responseFileList.files;
-    var responseFileContent = "";
-    for (let i in responseFiles) {
-        responseFileContent += `${responseFileContent}\n${await responseFiles[i].content()}`;
-    }
-    logger.debug(`Filelist is ${responseFileContent}`);
-    response.send(responseFileContent);
+    const fileContent = await file.buffer();
+    response.setHeader('Content-Type', 'image/png');
+    response.send(fileContent);
   });
 
   router.use(errorHandler());

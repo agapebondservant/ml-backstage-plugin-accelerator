@@ -18,6 +18,8 @@ export interface Config {
   /** @visibility frontend */
   mlbackstage?: {
     /** @visibility frontend */
-    clusterName: string
+    clusterName: string,
+    /** @visibility frontend */
+    imageRepoBaseUrl: string
   }
 }
