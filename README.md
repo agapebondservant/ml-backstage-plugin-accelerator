@@ -142,3 +142,17 @@ tanzu apps workload get ml-backstage-plugin-app     #should yield image-processo
 ```
 tanzu apps workload delete ml-backstage-plugin-app --yes
 ```
+
+# Prepare for TAP Integration
+* To publish the plugins:
+```
+cd plugins/mlworkflows-backend/
+rm -rf dist && yarn build && npm init --scope=@oawofolu # Bump up version when prompted
+
+npm publish --access public && cd - 
+
+cd plugins/mlworkflows-main/
+rm -rf dist && yarn build && npm init --scope=@oawofolu # Bump up version when prompted
+
+npm publish --access public && cd - 
+```

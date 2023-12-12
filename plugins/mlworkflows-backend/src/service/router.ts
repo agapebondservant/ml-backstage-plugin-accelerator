@@ -1,20 +1,20 @@
-import { errorHandler, UrlReader } from '@backstage/backend-common';
+import { errorHandler, UrlReader, loadBackendConfig } from '@backstage/backend-common';
 import express from 'express';
 import nodecache from 'node-cache';
 import Router from 'express-promise-router';
 import { Logger } from 'winston';
-import { Config } from '@backstage/config';
 
 export interface RouterOptions {
-  logger: Logger, reader: UrlReader, config: Config
+  logger: Logger, reader: UrlReader
 }
 
 export async function createRouter(
   options: RouterOptions,
 ): Promise<express.Router> {
-  const { logger, reader, config } = options;
+  const { logger, reader } = options;
   const appCache = new nodecache({ stdTTL : 60, deleteOnExpire: false });
   const router = Router();
+  const config = await loadBackendConfig({ argv: process.argv, logger: logger });
   router.use(express.json());
 
   router.get('/health', (_, response) => {
@@ -30,7 +30,7 @@ export async function createRouter(
 
     if(appCache.has(imageName)){
         logger.info(`Loading ${imageName} from cache...`);
-        fileContent = appCache.get(imageName);
+        fileContent = appCache.get(imageName)!;
     } else {
         const file = await reader.readUrl(`${imageBaseUrl}/${imageName}`);
         fileContent = await file.buffer();

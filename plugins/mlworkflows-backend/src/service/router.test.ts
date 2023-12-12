@@ -14,7 +14,7 @@ describe('createRouter', () => {
     });
     const router = await createRouter({
       logger: getVoidLogger(),
-      reader: UrlReaders.default( { logger, config } )
+      reader: UrlReaders.default( { logger, config } ),
     });
     app = express().use(router);
   });

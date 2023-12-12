@@ -20,7 +20,7 @@ export async function startStandaloneServer(
   logger.debug('Starting application server...');
   const router = await createRouter({
     logger,
-    reader: UrlReaders.default({logger: logger, config})
+    reader: UrlReaders.default({logger: logger, config}),
   });
 
   let service = createServiceBuilder(module)
