@@ -31,18 +31,27 @@ const mlCardTheme = createTheme({
     MuiCardContent: {
       styleOverrides: {
         root: {
-          backgroundColor: '#424242',
-          color: '#ffffff',
+          backgroundImage: 'linear-gradient(to bottom, #1B2B32, #1B2B32)',
+          color: 'white',
+          fontSize: '0.675rem',
+        },
+      },
+    },
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          fontSize: '0.675rem',
         },
       },
     },
     MuiCardActions: {
       styleOverrides: {
         root: {
-          backgroundColor: '#424242',
+          backgroundColor: '#1B2B32',
+          padding: 0,
         },
       },
-    },
+    }
   },
 });
 
@@ -94,7 +103,8 @@ export const MlCardComponent = (props: any) => {
     console.log(error);
   }
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card
+        sx={{ maxWidth: 345, border: '1px solid #404E60' }}>
       <CardMedia
         sx={{ height: 140 }}
         image={ `${BACKEND_BASE_URL}/api/mlworkflows/images/` + props.image }
@@ -102,19 +112,22 @@ export const MlCardComponent = (props: any) => {
       />
       <CardContent
         theme= { mlCardTheme }>
-        <Typography variant="body2">
+        <Typography variant="body2" sx={{ fontSize: '14px'}}>
           { props.body }
         </Typography>
       </CardContent>
       <CardActions
         theme= { mlCardTheme }>
-        <MaterialButton onClick={openDialog}>Connect</MaterialButton>
+        <MaterialButton onClick={openDialog}>
+            <Typography sx={{ color: 'white', textTransform: 'uppercase', fontSize: '14px', fontWeight: '500' }}>Connect</Typography>
+        </MaterialButton>
         <Dialog
             open={open}
             onClose={closeDialog}
             aria-labelledby="dialog-instances"
             aria-describedby="List of instances"
-            maxWidth="xl"
+            maxWidth="sm"
+            fullWidth="true"
             scroll="body"
         >
             <DialogTitle>Instances <IconButton style={{ float: 'right' }} aria-label="close" onClick={closeDialog}><CloseIcon/></IconButton></DialogTitle>
@@ -129,7 +142,8 @@ export const MlCardComponent = (props: any) => {
             <><MaterialButton
                 href={ `${item.data?.link}` }
                 target="_blank"
-                rel="noopener">Console
+                rel="noopener">
+                <Typography sx={{ color: 'white', textTransform: 'uppercase', fontSize: '14px', fontWeight: '500' }}>Console</Typography>
             </MaterialButton></>
          )}
       </CardActions>

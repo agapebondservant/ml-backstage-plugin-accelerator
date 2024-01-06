@@ -13,7 +13,7 @@ export const MlDialogComponent = (props: any) => {
         ? props.items.map((item: any) => {
             return {
                 name: 'Mehmet',
-                binding: item.metadata?.name ? 'Service Binding: '+item.metadata?.name : '',
+                binding: item.metadata?.name,
                 copy: true
             };
         })
@@ -24,7 +24,8 @@ export const MlDialogComponent = (props: any) => {
           <Typography variant="body2">
             <Link href="https://servicebinding.io/application-developer/"
                target="_blank"
-               color={lightGreen[500]}>
+               color={lightGreen[500]}
+               sx={{fontSize: '14px'}}>
                 <Grid container direction="row" alignItems="flex-start" justifyContent="flex-start">
                   <Grid item>Connecting to a service with ServiceBindings</Grid>
                 </Grid>
@@ -35,7 +36,7 @@ export const MlDialogComponent = (props: any) => {
                 columns={[
                   { title: 'icon', field: 'avatar', render: () => <Avatar sx={{ bgcolor: lightGreen[500] }}>{props.category.charAt(0).toUpperCase()}</Avatar> },
                   { title: 'serviceBinding', field: 'binding', render: rowData => <><div style={{color: '#fff'}}>{rowData.binding || 'No instances found.'}</div></> },
-                  { title: 'copy', field: 'copy', render: rowData => rowData.binding ? <><CopyTextButton text={rowData.binding}/></> : '' }
+                  { title: 'copy', field: 'copy', render: rowData => rowData.binding ? <><span>Service Binding: </span><CopyTextButton text={rowData.binding}/></> : '' }
                 ]}
                 data={ data }
                 options={{ search: false, showTitle: true, toolbar: false, paging: false, rowStyle: { backgroundColor: '#424242', color: '#fff'}, }}

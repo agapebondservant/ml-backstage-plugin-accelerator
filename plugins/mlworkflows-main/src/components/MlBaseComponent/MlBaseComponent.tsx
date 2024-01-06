@@ -33,12 +33,12 @@ export const MlBaseComponent = (props: any) => {
                 <>
                 <Header title={props.title}
                         subtitle={props.subtitle}
-                        style={{background: 'none'}}>
+                        style={{background: 'none', boxShadow: 'none', width: '30%', paddingBottom: '0'}}>
                 </Header>
                 <Content>
                    {[...new Set(mlFilesPayload.tools.filter((mlFile: any) => mlFile.category === props.category).map(mlFile => mlFile.title))].map((mlFileTitle: string, i: any) =>
                    <>
-                      <Typography variant="h6">{mlFileTitle}</Typography>
+                      <Typography variant="h5">{mlFileTitle}</Typography>
                       <Grid container spacing={3} key={props.category + "mlfiletitlegrid" + i}>
                         {mlFilesPayload.tools.filter( (mlFile: any) => mlFile.title === mlFileTitle).map((mlFile: any, j: any) =>
                             <Grid item key={props.category + "mlfilegrid" + j}>
