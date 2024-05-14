@@ -31,16 +31,16 @@ export const MlBaseComponent = (props: any) => {
    const homeOptions =
    [ { title: 'Deploy an opensource MLOps platform',
        description: 'Build an automated MLOps platform on Tanzu (model training, ML pipelines, data pipelines, model deployments, monitoring, governance, notebooks, etc)',
-       link: 'https://tap-gui.tanzumlai.com/create/templates/mlplatform'},
+       link: '/create/templates/mlplatform'},
      { title: 'Launch an ML workspace',
        description: 'Use Jupyter notebooks and similar IDEs for experimentation and preprocessing tasks',
        link: 'https://tap-gui.tanzudatatap.com/mlworkflows/mlworkflows-experiments'},
      { title: 'Generate an ML pipeline from samples',
        description: 'Generate an automated ML pipeline from a predesigned template',
-       link: 'https://tap-gui.tanzumlai.com/create?filters%5Bkind%5D=template&filters%5Buser%5D=all&filters%5Btags%5D=sample&filters%5Btags%5D=pipeline'},
+       link: '/create?filters%5Bkind%5D=template&filters%5Buser%5D=all&filters%5Btags%5D=sample&filters%5Btags%5D=pipeline'},
      { title: 'Build an ML app from samples',
        description: 'Discover, reuse and customize pre-existing templates for ML applications',
-       link: 'https://tap-gui.tanzumlai.com/create?filters%5Bkind%5D=template&filters%5Buser%5D=all&filters%5Btags%5D=sample&filters%5Btags%5D=app'},
+       link: '/create?filters%5Bkind%5D=template&filters%5Buser%5D=all&filters%5Btags%5D=sample&filters%5Btags%5D=app'},
     ];
 
    var { value, loading, error } = useAsync(async (): Promise<any[]> => {
@@ -65,7 +65,7 @@ export const MlBaseComponent = (props: any) => {
                 <Content>
                     <List sx={{ minWidth: 275 }}>
                       { homeOptions.map(( homeOption: any ) =>
-                      <ListItem sx={{margin: '30px 0;', padding: '20px', bgcolor: 'background.paper'}} >
+                      <ListItem sx={{margin: '30px 0;', padding: '20px', bgcolor: 'background.paper', border: '1px solid #404e60', border-radius: '4px'}} >
                         <ListItemAvatar><Avatar component="a" href={homeOption.link} target="_blank"><ArrowForwardIcon /></Avatar></ListItemAvatar>
                         <ListItemText primary={<Typography style={{ color: 'gray' }}>{homeOption.title}</Typography>}
                                       secondary={homeOption.description}/>
