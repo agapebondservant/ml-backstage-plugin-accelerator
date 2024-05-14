@@ -52,7 +52,7 @@ export const MlBaseComponent = (props: any) => {
                     <List sx={{ minWidth: 275 }}>
                       {[...new Set(mlFilesPayload.tools.filter((mlFile: any) => mlFile.category === 'entry'))].map((mlFile: any, i: any) =>
                       <Paper elevation={3}>
-                      <ListItem sx={{margin: '30px 0;', padding: '20px', bgcolor: 'background.paper', border: '1px solid #404e60', borderRadius: '4px', "&:hover": {"backgroundColor": "#f3f2ee"}}}
+                      <ListItem sx={{margin: '30px 0;', padding: '20px', bgcolor: 'background.paper', borderRadius: '4px', "&:hover": {"backgroundColor": "#f3f2ee"}}}
                                 component="a" href={mlFile.route} target="_blank">
                         <ListItemAvatar><Avatar><ArrowForwardIcon /></Avatar></ListItemAvatar>
                         <ListItemText primary={<Typography style={{ color: 'gray' }}>{mlFile.title}</Typography>}
