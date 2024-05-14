@@ -5932,7 +5932,7 @@
     yn "^4.0.0"
 
 "@oawofolu/plugin-mlworkflows-main@^0.4.3", "@oawofolu/plugin-mlworkflows-main@file:/Users/oawofolu/PIVOTAL/data/educates/ml-backstage-plugin-accelerator/plugins/mlworkflows-main":
-  version "0.4.15"
+  version "0.4.17"
   resolved "file:plugins/mlworkflows-main"
   dependencies:
     "@backstage/core-components" "^0.13.4"

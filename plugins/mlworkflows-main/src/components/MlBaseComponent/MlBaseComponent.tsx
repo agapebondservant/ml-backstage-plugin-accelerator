@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useState } from 'react';
-import { Grid, Typography } from '@material-ui/core';
+import { Grid, Typography, Paper } from '@material-ui/core';
 import { Header, Page, Content, Progress, WarningPanel } from '@backstage/core-components';
 import { MlCardComponent } from '../MlCardComponent';
 import { useApi, configApiRef } from '@backstage/core-plugin-api';
@@ -28,21 +28,6 @@ export const MlBaseComponent = (props: any) => {
 
    const catalogApi = useApi( catalogApiRef );
 
-   const homeOptions =
-   [ { title: 'Deploy an opensource MLOps platform',
-       description: 'Build an automated MLOps platform on Tanzu (model training, ML pipelines, data pipelines, model deployments, monitoring, governance, notebooks, etc)',
-       link: '/create/templates/mlplatform'},
-     { title: 'Launch an ML workspace',
-       description: 'Use Jupyter notebooks and similar IDEs for experimentation and preprocessing tasks',
-       link: 'https://tap-gui.tanzudatatap.com/mlworkflows/mlworkflows-experiments'},
-     { title: 'Generate an ML pipeline from samples',
-       description: 'Generate an automated ML pipeline from a predesigned template',
-       link: '/create?filters%5Bkind%5D=template&filters%5Buser%5D=all&filters%5Btags%5D=sample&filters%5Btags%5D=pipeline'},
-     { title: 'Build an ML app from samples',
-       description: 'Discover, reuse and customize pre-existing templates for ML applications',
-       link: '/create?filters%5Bkind%5D=template&filters%5Buser%5D=all&filters%5Btags%5D=sample&filters%5Btags%5D=app'},
-    ];
-
    var { value, loading, error } = useAsync(async (): Promise<any[]> => {
         const payload = await catalogApi.getEntityByRef({ kind: "Component", name: "mltools-metadata"});
         console.debug(payload);
@@ -56,6 +41,7 @@ export const MlBaseComponent = (props: any) => {
    }
    else if (mlFilesPayload ) {
        if (props.title === "Entry") {
+            /*** * Home / Entry Page * ***/
             return (
                 <>
                 <Header title='Tanzu Spaces for AI and Machine Learning'
@@ -64,12 +50,15 @@ export const MlBaseComponent = (props: any) => {
                 </Header>
                 <Content>
                     <List sx={{ minWidth: 275 }}>
-                      { homeOptions.map(( homeOption: any ) =>
-                      <ListItem sx={{margin: '30px 0;', padding: '20px', bgcolor: 'background.paper', border: '1px solid #404e60', borderRadius: '4px'}} >
-                        <ListItemAvatar><Avatar component="a" href={homeOption.link} target="_blank"><ArrowForwardIcon /></Avatar></ListItemAvatar>
-                        <ListItemText primary={<Typography style={{ color: 'gray' }}>{homeOption.title}</Typography>}
-                                      secondary={homeOption.description}/>
+                      {[...new Set(mlFilesPayload.tools.filter((mlFile: any) => mlFile.category === 'entry'))].map((mlFile: any, i: any) =>
+                      <Paper elevation={3}>
+                      <ListItem sx={{margin: '30px 0;', padding: '20px', bgcolor: 'background.paper', border: '1px solid #404e60', borderRadius: '4px', "&:hover": {"backgroundColor": "#f3f2ee"}}}
+                                component="a" href={mlFile.route} target="_blank">
+                        <ListItemAvatar><Avatar><ArrowForwardIcon /></Avatar></ListItemAvatar>
+                        <ListItemText primary={<Typography style={{ color: 'gray' }}>{mlFile.title}</Typography>}
+                                      secondary={mlFile.body}/>
                       </ListItem>
+                      </Paper>
                       )}
                     </List>
                 </Content>
@@ -77,6 +66,7 @@ export const MlBaseComponent = (props: any) => {
             );
          }
          else {
+            /*** * MLOps Tools * ***/
             return (
                     <>
                     <Header title={props.title}
