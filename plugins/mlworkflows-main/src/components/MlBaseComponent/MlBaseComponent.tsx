@@ -65,7 +65,7 @@ export const MlBaseComponent = (props: any) => {
                 <Content>
                     <List sx={{ minWidth: 275 }}>
                       { homeOptions.map(( homeOption: any ) =>
-                      <ListItem sx={{margin: '30px 0;', padding: '20px', bgcolor: 'background.paper', border: '1px solid #404e60', border-radius: '4px'}} >
+                      <ListItem sx={{margin: '30px 0;', padding: '20px', bgcolor: 'background.paper', border: '1px solid #404e60', borderRadius: '4px'}} >
                         <ListItemAvatar><Avatar component="a" href={homeOption.link} target="_blank"><ArrowForwardIcon /></Avatar></ListItemAvatar>
                         <ListItemText primary={<Typography style={{ color: 'gray' }}>{homeOption.title}</Typography>}
                                       secondary={homeOption.description}/>
