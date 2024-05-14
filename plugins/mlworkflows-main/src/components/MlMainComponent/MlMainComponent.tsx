@@ -6,6 +6,12 @@ import { Page } from '@backstage/core-components';
 export const MlMainComponent = () => (
     <Page themeId="tool">
     <TabbedLayout>
+      <TabbedLayout.Route path="mlworkflows-entry" title="HOME">
+        <MlBaseComponent
+            title="Entry"
+            subtitle="Open MLOps main page"
+            category="entry"/>
+      </TabbedLayout.Route>
       <TabbedLayout.Route path="mlworkflows-data" title="DATA">
         <MlBaseComponent
             title="Data"
